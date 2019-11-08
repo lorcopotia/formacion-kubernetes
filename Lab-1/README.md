@@ -1,17 +1,17 @@
 # Instrucciones Laboratorio 1
 ### 1. Crear pod de nginx
-    #kubectl create -f nginx.yaml 
+    $kubectl create -f nginx.yaml 
     pod/nginx created
 ### 2. Comprobar que el pod esta corriendo
-    #kubectl get pods
+    $kubectl get pods
     NAME    READY   STATUS    RESTARTS   AGE
     nginx   1/1     Running   0          1m
     
-    #kubectl get pods -owide
+    $kubectl get pods -owide
     NAME    READY   STATUS    RESTARTS   AGE   IP           NODE
     nginx   1/1     Running   0          1m    172.17.0.5   minikube
 ### 3. Ver Informacion del pod
-    #kubectl describe pod nginx
+    $kubectl describe pod nginx
     Name:         nginx
     Namespace:    default
     Node:         minikube/10.0.2.15
@@ -58,3 +58,39 @@
       Normal  Pulled                 4m6s  kubelet, minikube  Successfully pulled image "nginx"
       Normal  Created                4m5s  kubelet, minikube  Created container
       Normal  Started                4m5s  kubelet, minikube  Started container
+### 4. Acceder al pod con curl nginx
+    $ minikube ssh
+                             _             _            
+                _         _ ( )           ( )           
+      ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __  
+    /' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+    | ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+    (_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+    $ curl http://172.17.0.5
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+
