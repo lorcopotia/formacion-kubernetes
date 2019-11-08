@@ -18,3 +18,5 @@
     To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ### 5. Para acceder a la VM de minikube
     minikube ssh
+### 6. Acceso al dashboard de minikube
+    minikube dashboard
