@@ -1,9 +1,10 @@
 # Instrucciones Laboratorio 1
 ### 1. Crear pod de nginx
+    $cd <path repo>/Lab-1
     $kubectl create -f nginx.yaml 
     pod/nginx created
 ### 2. Comprobar que el pod esta corriendo
-    $kubectl get pods
+    $kubectl get pods -nformacion
     NAME    READY   STATUS    RESTARTS   AGE
     nginx   1/1     Running   0          1m
     
@@ -11,9 +12,9 @@
     NAME    READY   STATUS    RESTARTS   AGE   IP           NODE
     nginx   1/1     Running   0          1m    172.17.0.5   minikube
 ### 3. Ver Informacion del pod
-    $kubectl describe pod nginx
+    $kubectl describe pod nginx -nformacion
     Name:         nginx
-    Namespace:    default
+    Namespace:    formacion
     Node:         minikube/10.0.2.15
     Start Time:   Fri, 08 Nov 2019 14:11:40 +0100
     Labels:       app=nginx
