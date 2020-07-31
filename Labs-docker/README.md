@@ -4,6 +4,10 @@
 
 https://www.manusoft.es/linux/configurar-una-maquina-virtual-con-ubuntu-en-virtualbox/
 
+Añadir guest additions:
+
+https://kifarunix.com/install-virtualbox-guest-additions-on-ubuntu-20-04/
+
 #### 2. Instalar docker:
 
 https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
